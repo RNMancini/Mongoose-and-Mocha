@@ -1,5 +1,14 @@
 var http = require('http');
+var fs = require('fs');
 
+var myReadStream = fs.createReadStream = fs.createReadStream(_dirname + '/readMe.txt', 'utf8');
+
+myReadStream.on('data', function(chunk){\console.log('new chunk received:');
+    console.log(chunk); log(number) : number
+});
+
+
+/*
 var server = http.createServer(function(req, res){
     console.log('request was made: ' + req.url);
     res.writeHead(200, {'Content-Type': 'text/plain'});
