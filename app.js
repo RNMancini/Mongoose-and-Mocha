@@ -1,9 +1,10 @@
 var app = require('express');
 var app = express();
 
+app.set('view engine', 'ejs');
+
 app.get('/', function(req, res){
- 
-    res.sendFile(_dirname + '/index.html');
+  res.sendFile(_dirname + '/index.html');
 });
 
 app.get('/contact', function(req, res){
@@ -11,7 +12,7 @@ app.get('/contact', function(req, res){
 });
 
 app.get('/profile/:name', function(req, res){
-    res.send('You are viewing the profile of ' + req.params.name);
+    res.render('profile' + {person: req.params.name});
 });
 
 app.listen(process.env.PORT, process.env.IP, 3000);
