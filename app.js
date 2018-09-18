@@ -2,6 +2,7 @@ var app = require('express');
 var app = express();
 
 app.set('view engine', 'ejs');
+app.use('/assets', express.static('stuff'));
 
 app.get('/', function(req, res){
   res.render('index');
@@ -16,4 +17,4 @@ app.get('/profile/:name', function(req, res){
     res.render('profile' + {person: req.params.name});
 });
 
-app.listen(process.env.PORT, process.env.IP, 3000);
+app.listen(process.env.PORT, process.env.IP);
